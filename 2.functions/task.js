@@ -11,13 +11,13 @@ function getArrayParams(...arr) {
 		}
 		sum = +arr[i];
 	}
-let avg=sum/arr.length;
+const avg=(sum/arr.length).toFixed(2);
 
 
 	return {
 		min: min,
 		max: max,
-		avg: avg
+		avg: Number(avg)
 	};
 }
 
