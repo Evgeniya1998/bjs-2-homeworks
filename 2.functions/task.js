@@ -1,6 +1,6 @@
 function getArrayParams(...arr) {
-	let min = 0;
-	let max = 0;
+	let min = Infinity;
+	let max = -Infinity;
 	let sum = 0;
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] < min) {
