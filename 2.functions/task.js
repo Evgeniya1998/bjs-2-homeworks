@@ -39,21 +39,22 @@ console.log(summElementsWorker()); // 0
 console.log(summElementsWorker(10, 10, 11, 20, 10)); // 61
 
 function differenceMaxMinWorker(...arr) {
-	let min = Infinity;
-	let max = -Infinity;
-	let difference;
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] < min) {
-			min = arr[i];
-		}
+	let min = arr[0];
+	let max = arr[0];
 
+	if (arr.length === 0)
+		return 0;
+
+	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] > max) {
 			max = arr[i];
 		}
-		return (max - min);
-	}
 
-	
+		if (arr[i] < min) {
+			min = arr[i];
+		}
+	}
+	return (max - min)
 }
 console.log(differenceMaxMinWorker()); // 0
 console.log(differenceMaxMinWorker(10, 10, 11, 20, 10));
