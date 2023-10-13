@@ -60,21 +60,21 @@ console.log(differenceMaxMinWorker()); // 0
 console.log(differenceMaxMinWorker(10, 10, 11, 20, 10));
 
 function differenceEvenOddWorker(...arr) {
-	sumEvenElement = 0;
-	sumOddElement = 0;
-	if (arr.length === 0) {
-		return 0;
-	}
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] % 2 === 0) {
-			sumEvenElement += arr[i];
-		} else {
-			sumOddElement += arr[i]
+  sumEvenElement = 0;
+  sumOddElement = 0;
+  if (arr.length === 0) {
+    return 0;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sumEvenElement += arr[i];
+    } else {
+      sumOddElement += arr[i]
+}
+    }
+    return (sumEvenElement - sumOddElement);
+  
 
-		}
-		return (sumEvenElement - sumOddElement);
-	}
-	
 }
 console.log(differenceEvenOddWorker(94, 51, 57, 41, 47, 66, 58, 10, 38, 17)); // 266 - 213 => 53
 console.log(differenceEvenOddWorker(15, 97, 85, 64, 67, 10, 69, 40, 15, 35)); // 114 - 383 => -269
