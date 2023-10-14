@@ -11,7 +11,6 @@ function getArrayParams(...arr) {
 	return {
 		min: min,
 		max: max,
-		sum: sum,
 		avg: avg
 	};
 }
@@ -67,6 +66,8 @@ function makeWork(arrOfArr, func) {
 	}
 	return maxWorkerResult;
 }
+
+
 
 //Примеры 
 console.log(getArrayParams(-99, 99, 10)) // { min: -99, max: 99, avg: 3.33 }
