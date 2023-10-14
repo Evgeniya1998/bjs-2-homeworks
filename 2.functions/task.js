@@ -11,7 +11,7 @@ function getArrayParams(...arr) {
 	return {
 		min: min,
 		max: max,
-		avg: avg
+		avg:Number (avg)
 	};
 }
 //Задача №2
@@ -48,6 +48,23 @@ function differenceEvenOddWorker(...arr) {
     }
   }
   return (sumEvenElement - sumOddElement);
+}
+
+function averageEvenElementsWorker(...arr) {
+  sumEvenElement = 0;
+  countEvenElement = 0;
+  if (arr.length === 0) {
+    return 0;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sumEvenElement += arr[i];
+      countEvenElement++
+    }
+  }
+  if (countEvenElement === 0)
+    return 0;
+  return (sumEvenElement / countEvenElement);
 }
 
 //Задача №3
