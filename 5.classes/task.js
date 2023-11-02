@@ -94,3 +94,37 @@ class PrintEditionItem {
   console.log(picknick.state); //10
   picknick.fix();
   console.log(picknick.state); //15
+
+
+  // Задача 2
+  class Library {
+    constructor (name) {
+      this.name = name;
+      this.books = [];
+    }
+    
+    addBook(book) {
+      if (book.state >30){
+        this.books.push(book)
+      }
+    }
+    findBookBy(type, value){
+      for (let i = 0; i < type.length; i++){
+        if (type[i] === value){
+          return this.books[i];
+        }else {
+          return null;
+        }
+        }
+      }
+    giveBookByName(bookName){
+      if(findBookBy.hasOwnProperty('bookName')){
+        delete this.bookName;
+      }else{
+        return null;
+      }
+  
+  
+    }
+  }
+       
