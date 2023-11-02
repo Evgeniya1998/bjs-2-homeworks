@@ -109,22 +109,21 @@ class PrintEditionItem {
       }
     }
     findBookBy(type, value){
-      for (let i = 0; i < type.length; i++){
-        if (type[i] === value){
-          return this.books[i];
-        }else {
+     let result= this.books.find(book => book[type] === value);
+      if (result == undefined) {
           return null;
-        }
-        }
+      } else {
+          return result;
       }
+      }
+   
+    
     giveBookByName(bookName){
-      if(findBookBy.hasOwnProperty('bookName')){
-        delete this.bookName;
-      }else{
+        let result= this.books.find(book => book[bookName] === book[bookName]);
+      if (result == undefined) {
         return null;
+      }else {
+        delete this.result
+          
+        }}
       }
-  
-  
-    }
-  }
-       
