@@ -40,13 +40,6 @@ class PrintEditionItem {
   sherlock.fix();
   console.log(sherlock.state); //100
   
-  
-  
-  
-  
-  
-  
-  
   class Magazine extends PrintEditionItem {
       constructor(name, releaseDate, pagesCount) {
           super(name, releaseDate, pagesCount);
@@ -97,33 +90,35 @@ class PrintEditionItem {
 
 
   // Задача 2
+
   class Library {
-    constructor (name) {
-      this.name = name;
-      this.books = [];
+    constructor(name) {
+        this.name = name;
+        this.books = [];
     }
-    
+
     addBook(book) {
-      if (book.state >30){
-        this.books.push(book)
-      }
+        if (book.state > 30) {
+            this.books.push(book)
+        }
     }
-    findBookBy(type, value){
-     let result= this.books.find(book => book[type] === value);
-      if (result == undefined) {
-          return null;
-      } else {
-          return result;
-      }
-      }
-   
-    
-    giveBookByName(bookName){
-        let result= this.books.find(book => book[bookName] === book[bookName]);
-      if (result == undefined) {
-        return null;
-      }else {
-        delete this.result
-          
-        }}
-      }
+    findBookBy(type, value) {
+        let result = this.books.find(book => book[type] === value);
+        if (result == undefined) {
+            return null;
+        } else {
+            return result;
+        }
+    }
+
+    giveBookByName(bookName) {
+        for (let i = 0; i < this.books.length; i++)
+            if (this.books[i] === bookName) {
+                const book = this.books[i];
+                this.books.splice(i, 1);
+                return book;
+            } else {
+                return null
+            }
+    }
+}
