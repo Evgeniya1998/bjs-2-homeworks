@@ -113,9 +113,9 @@ class PrintEditionItem {
 
     giveBookByName(bookName) {
         for (let i = 0; i < this.books.length; i++)
-            if (this.books[i] === bookName) {
+            if (this.books[i].name === bookName) {
                 const book = this.books[i];
-                this.books.splice(i, 1);
+                this.books.splice(i,delete 1);
                 return book;
             } else {
                 return null
