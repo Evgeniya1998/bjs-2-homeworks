@@ -123,3 +123,36 @@ class PrintEditionItem {
             }
         }
     
+// Задача 3
+class Student {
+	constructor(name) {
+		this.name = name;
+		this.marks = {}
+	}
+
+	addMark(mark, subject) {
+		if (mark > 5 || mark < 2) {
+			return;
+		} else {
+			if (!this.marks.hasOwnProperty(subject)) {
+				this.marks[subject] = [];
+			}
+			this.marks[subject].push(mark);
+		}
+	}
+	getAverageBySubject(subject) {
+		if (!this.marks.hasOwnProperty(subject)) {
+			return 0;
+		} else {
+			return this.marks[subject].reduce((acc,cur) => acc + cur / this.marks[subject].length, 0);
+		}
+	}
+	getAverage() {
+        const subjectAll = Object.keys(this.marks);
+		if (subjectAll.length ===0) {
+			return 0;
+		} 
+			return subjectAll.reduce((acc, cur) => acc + this.getAverageBySubject(cur) / subjectAll.length, 0);
+		}
+	}
+
